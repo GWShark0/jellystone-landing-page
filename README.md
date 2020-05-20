@@ -1,5 +1,7 @@
 # jellystone-landing-page
 
+https://jellystone-landing-page.now.sh
+
 ## Install
 
 ```
