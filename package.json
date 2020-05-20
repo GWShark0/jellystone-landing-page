@@ -1,0 +1,18 @@
+{
+  "name": "jellystone-landing-page",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "parcel build index.html",
+    "dev": "parcel index.html",
+    "now-build": "npm run build"
+  },
+  "devDependencies": {
+    "less": "^3.11.1",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
