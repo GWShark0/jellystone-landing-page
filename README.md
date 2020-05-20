@@ -11,5 +11,5 @@ yarn
 ## Run
 
 ```
-yarn dev
+yarn start
 ```

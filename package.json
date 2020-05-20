@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "parcel build index.html",
-    "dev": "parcel index.html",
-    "now-build": "npm run build"
+    "build": "parcel build src/index.html",
+    "now-build": "npm run build",
+    "start": "parcel src/index.html"
   },
   "devDependencies": {
     "less": "^3.11.1",
