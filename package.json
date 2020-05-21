@@ -13,7 +13,6 @@
     "sass": "^1.26.5"
   },
   "dependencies": {
-    "autoprefixer": "^9.8.0",
-    "normalize.css": "^8.0.1"
+    "autoprefixer": "^9.8.0"
   }
 }
