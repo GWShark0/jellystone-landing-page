@@ -194,6 +194,7 @@ a {
 
 .hero__image {
   width: 100%;
+  vertical-align: middle;
 
   @media (min-width: 640px) {
     width: 500px;
