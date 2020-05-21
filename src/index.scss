@@ -69,7 +69,6 @@ a {
   border: none;
   border-radius: 999em;
   appearance: none;
-  outline: none;
   cursor: pointer;
   transition: background-color 0.25s ease;
 
@@ -223,7 +222,6 @@ a {
   border-radius: 50%;
   background-color: var(--white);
   color: var(--pink);
-  outline: none;
   appearance: none;
   cursor: pointer;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
