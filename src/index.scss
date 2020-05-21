@@ -242,8 +242,11 @@ a {
   padding: 16px;
   max-width: 200px;
   font-weight: 600;
-  text-decoration: none;
   color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .step__number {
@@ -304,52 +307,23 @@ a {
 }
 
 .social-media {
-  margin-top: 80px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
   line-height: 1.25;
+
+  @media (min-width: 768px) {
+    position: relative;
+    margin-top: 80px;
+  }
 }
 
 .social-media__icons {
   margin-top: 12px;
   width: 100%;
   max-width: 320px;
-}
-
-.footer {
-  padding-bottom: 18px;
-  text-align: center;
-}
-
-.footer__title {
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 48px;
-  line-height: 58px;
-  font-weight: bold;
-}
-
-.footer__tagline {
-  margin-bottom: 24px;
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: bold;
-}
-
-.bottom-gradient {
-  position: relative;
-  height: min(15vw, 200px);
-  overflow: hidden;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: var(--bottom-skew-height);
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 150%;
-    background: linear-gradient(50deg, var(--pink) 0%, var(--yellow) 100%);
-    transform: skewY(4deg);
-  }
 }
 
 .section {
@@ -386,6 +360,17 @@ a {
 
 .section__wrapper {
   flex-shrink: 0;
+
+  @media (min-width: 768px) {
+    margin-right: 24px;
+  }
+}
+
+.section--reverse .section__wrapper {
+  @media (min-width: 768px) {
+    margin-right: 0;
+    margin-left: 24px;
+  }
 }
 
 .steps-section {
@@ -427,9 +412,58 @@ a {
 }
 
 .download-section {
+  position: relative;
+  margin-bottom: 75px;
+  padding-bottom: 100px;
+
   @media (min-width: 768px) {
+    margin-bottom: 0;
     padding-top: 80px;
-    padding-bottom: 180px;
+    padding-bottom: 90px;
     text-align: left;
+  }
+}
+
+.footer {
+  padding-top: 18px;
+  padding-bottom: 50px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding-top: 90px;
+    padding-bottom: 20px;
+  }
+}
+
+.footer__title {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: bold;
+}
+
+.footer__tagline {
+  margin-bottom: 24px;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.bottom-gradient {
+  position: relative;
+  height: min(15vw, 200px);
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: var(--bottom-skew-height);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 150%;
+    background: linear-gradient(50deg, var(--pink) 0%, var(--yellow) 100%);
+    transform: skewY(4deg);
   }
 }
