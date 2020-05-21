@@ -9,12 +9,11 @@
     "start": "parcel src/index.html"
   },
   "devDependencies": {
-    "less": "^3.11.1",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.5"
   },
   "dependencies": {
     "autoprefixer": "^9.8.0",
-    "normalize.css": "^8.0.1",
-    "postcss-nesting": "^7.0.1"
+    "normalize.css": "^8.0.1"
   }
 }

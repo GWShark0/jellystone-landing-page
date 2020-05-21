@@ -1,5 +1,5 @@
 :root {
-  /* colors */
+  // colors
   --pink: #ff0089;
   --yellow: #ffe121;
   --blue: #0f87ff;
@@ -7,9 +7,9 @@
   --black: #000000;
   --white: #ffffff;
 
-  /* determine extra height for skewed rectangles SOHCAH(TOA) */
-  --top-skew-height: calc(100vw * 0.06139228045); /* a * tan(7°) / 2 */
-  --bottom-skew-height: calc(100vw * 0.03496340597); /* a * tan(4°) / 2 */
+  // determine extra height for skewed rectangles SOHCAH(TOA)
+  --top-skew-height: calc(100vw * 0.06139228045); // a * tan(7°) / 2
+  --bottom-skew-height: calc(100vw * 0.03496340597); // a * tan(4°) / 2
 
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -31,12 +31,16 @@ body {
 .nav {
   height: 80px;
   border-bottom: 1px solid #d9d9d9;
+  background-color: transparent;
 }
-
-////////////////////////////////////////
 
 a {
   color: var(--blue);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .text-pink {
@@ -81,16 +85,16 @@ a {
 }
 
 .container {
-  max-width: 1200px;
-  padding-right: 24px;
-  padding-left: 24px;
   margin-right: auto;
   margin-left: auto;
+  padding-right: 24px;
+  padding-left: 24px;
+  max-width: 1200px;
 }
 
 .hero {
   position: relative;
-  padding: 32px 32px 72px 32px;
+  padding: 32px 32px 70px 32px;
 
   @media (min-width: 1024px) {
     padding: 48px 0 100px 32px;
@@ -103,7 +107,6 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: var(--pink);
   background-image: linear-gradient(90deg, var(--pink) 0%, var(--yellow) 100%);
   overflow: hidden;
 
@@ -222,7 +225,7 @@ a {
 
 .hero__scroll-label {
   position: absolute;
-  bottom: 40px;
+  bottom: 32px;
   left: 50%;
   color: rgba(255, 255, 255, 0.85);
   transform: translateX(-50%);
@@ -236,8 +239,8 @@ a {
 }
 
 .step {
-  margin: 8px;
-  max-width: 168px;
+  padding: 16px;
+  max-width: 200px;
   font-weight: 600;
   text-decoration: none;
   color: inherit;
@@ -354,6 +357,8 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding-top: 28px;
+  padding-bottom: 28px;
   text-align: center;
 
   @media (min-width: 768px) {
@@ -385,42 +390,46 @@ a {
 
 .steps-section {
   padding-top: 54px;
-  padding-bottom: 40px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 40px;
+  }
 }
 
 .choose-section {
-  padding-top: 40px;
-  padding-bottom: 60px;
+  @media (min-width: 768px) {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
 }
 
 .upload-section {
-  padding-top: 60px;
-  padding-bottom: 90px;
-
   @media (min-width: 768px) {
+    padding-top: 60px;
+    padding-bottom: 90px;
     text-align: left;
   }
 }
 
 .add-section {
-  padding-top: 90px;
-  padding-bottom: 70px;
-
   @media (min-width: 768px) {
+    padding-top: 90px;
+    padding-bottom: 70px;
     text-align: left;
   }
 }
 
 .customize-section {
-  padding-top: 70px;
-  padding-bottom: 80px;
+  @media (min-width: 768px) {
+    padding-top: 70px;
+    padding-bottom: 80px;
+  }
 }
 
 .download-section {
-  padding-top: 80px;
-  padding-bottom: 180px;
-
   @media (min-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 180px;
     text-align: left;
   }
 }
