@@ -1,14 +1,15 @@
 :root {
-  // colors
+  /* colors */
   --pink: #ff0089;
   --yellow: #ffe121;
+  --blue: #0f87ff;
   --dark-grey: #36414d;
   --black: #000000;
   --white: #ffffff;
 
-  // determine extra height for skewed rectangles SOHCAH(TOA)
-  --top-skew-height: calc(100vw * 0.06139228045); // a * tan(7°) / 2
-  --bottom-skew-height: calc(100vw * 0.03496340597); // a * tan(4°) / 2
+  /* determine extra height for skewed rectangles SOHCAH(TOA) */
+  --top-skew-height: calc(100vw * 0.06139228045); /* a * tan(7°) / 2 */
+  --bottom-skew-height: calc(100vw * 0.03496340597); /* a * tan(4°) / 2 */
 
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -34,6 +35,59 @@ body {
 
 ////////////////////////////////////////
 
+a {
+  color: var(--blue);
+}
+
+.text-pink {
+  color: var(--pink);
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  min-width: 240px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: var(--black);
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 999em;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: #f7d600;
+  }
+}
+
+.icon {
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.container {
+  max-width: 1200px;
+  padding-right: 24px;
+  padding-left: 24px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .hero {
   position: relative;
   padding: 32px 32px 72px 32px;
@@ -53,7 +107,7 @@ body {
   background-image: linear-gradient(90deg, var(--pink) 0%, var(--yellow) 100%);
   overflow: hidden;
 
-  > img {
+  & > img {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -103,14 +157,13 @@ body {
 
 .headline {
   margin: 0 0 16px;
-  font-size: 42px;
+  font-size: 56px;
   line-height: 1.1964285714;
   font-weight: bold;
   color: var(--pink);
 
   @media (min-width: 640px) {
     margin: 0;
-    font-size: 56px;
   }
 }
 
@@ -123,29 +176,6 @@ body {
 
   @media (min-width: 640px) {
     font-size: 32px;
-  }
-}
-
-.button {
-  display: inline-block;
-  padding: 12px 24px;
-  min-width: 240px;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  color: var(--black);
-  background-color: var(--yellow);
-  border: none;
-  border-radius: 999em;
-  appearance: none;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.25s ease;
-
-  &:hover {
-    background-color: #f7d600;
   }
 }
 
@@ -167,11 +197,6 @@ body {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
     0 3px 5px -1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-}
-
-.icon {
-  vertical-align: middle;
-  fill: currentColor;
 }
 
 .hero__scroll-button {
@@ -203,48 +228,6 @@ body {
   transform: translateX(-50%);
 }
 
-.section__title {
-  margin: 0;
-  font-size: 48px;
-  line-height: 58px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.text-pink {
-  color: var(--pink);
-}
-
-.text-center {
-  text-align: center;
-}
-
-.font-semibold {
-  font-weight: 600;
-}
-
-.mx-auto {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.section {
-  margin: auto;
-  padding: 32px;
-  max-width: 1200px;
-}
-
-.section--reverse {
-  @media (min-width: 768px) {
-    flex-direction: row-reverse;
-  }
-}
-
-.steps-section {
-  padding-top: 54px;
-  text-align: center;
-}
-
 .steps {
   display: flex;
   justify-content: center;
@@ -255,6 +238,7 @@ body {
 .step {
   margin: 8px;
   max-width: 168px;
+  font-weight: 600;
   text-decoration: none;
   color: inherit;
 }
@@ -284,6 +268,7 @@ body {
 }
 
 .section__tagline {
+  margin-bottom: 24px;
   max-width: 340px;
   font-weight: 600;
 }
@@ -315,14 +300,6 @@ body {
   max-width: 620px;
 }
 
-.upload-section,
-.add-section,
-.download-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .social-media {
   margin-top: 80px;
   line-height: 1.25;
@@ -336,6 +313,7 @@ body {
 
 .footer {
   padding-bottom: 18px;
+  text-align: center;
 }
 
 .footer__title {
@@ -355,7 +333,7 @@ body {
 
 .bottom-gradient {
   position: relative;
-  height: 200px;
+  height: min(15vw, 200px);
   overflow: hidden;
 
   &::after {
@@ -371,22 +349,66 @@ body {
   }
 }
 
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.section--column {
+  flex-direction: column;
+}
+
+.section--reverse {
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
+  }
+}
+
+.section__title {
+  margin: 0;
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
 .section__wrapper {
   flex-shrink: 0;
 }
 
+.steps-section {
+  padding-top: 54px;
+  padding-bottom: 40px;
+}
+
 .choose-section {
+  padding-top: 40px;
   padding-bottom: 60px;
 }
 
 .upload-section {
   padding-top: 60px;
   padding-bottom: 90px;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 }
 
 .add-section {
   padding-top: 90px;
   padding-bottom: 70px;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 }
 
 .customize-section {
@@ -397,4 +419,8 @@ body {
 .download-section {
   padding-top: 80px;
   padding-bottom: 180px;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 }
