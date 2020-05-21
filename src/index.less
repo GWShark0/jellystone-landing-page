@@ -1,14 +1,15 @@
 :root {
-  --skew-padding: calc(100vw * 0.06139228045); // 100vw * tan(7°) / 2
-  --skew-padding-bottom: calc(100vw * 0.03496340597); // 100vw * tan(4°) / 2
+  // colors
   --pink: #ff0089;
   --yellow: #ffe121;
   --dark-grey: #36414d;
   --black: #000000;
   --white: #ffffff;
-}
 
-html {
+  // determine extra height for skewed rectangles SOHCAH(TOA)
+  --top-skew-height: calc(100vw * 0.06139228045); // a * tan(7°) / 2
+  --bottom-skew-height: calc(100vw * 0.03496340597); // a * tan(4°) / 2
+
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -21,9 +22,8 @@ html {
 
 body {
   font-family: proxima-nova, sans-serif;
-  color: var(--dark-grey);
-  font-size: 16px;
   line-height: 1.5;
+  color: var(--dark-grey);
 }
 
 // placeholder
@@ -32,8 +32,6 @@ body {
   border-bottom: 1px solid #d9d9d9;
 }
 
-////////////////////////////////////////
-////////////////////////////////////////
 ////////////////////////////////////////
 
 .hero {
@@ -55,17 +53,6 @@ body {
   background-image: linear-gradient(90deg, var(--pink) 0%, var(--yellow) 100%);
   overflow: hidden;
 
-  &::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: calc(var(--skew-padding) + 50px);
-    left: 0;
-    height: 100%;
-    background-color: #ffffff;
-    transform: skewY(-7deg);
-  }
-
   > img {
     position: absolute;
     right: 0;
@@ -74,25 +61,16 @@ body {
     width: 100%;
     vertical-align: middle;
   }
-}
 
-.hero__gradient {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-
-  &::before {
+  &::after {
     content: '';
     position: absolute;
-    top: 0;
     right: 0;
-    bottom: 0;
+    bottom: calc(var(--top-skew-height) + 50px);
     left: 0;
-    background: linear-gradient(45deg, var(--pink) 0%, var(--yellow) 100%);
-    transform: translateY(calc(100% - var(--skew-padding) - 60px)) skewY(-7deg);
+    height: 100%;
+    background-color: #ffffff;
+    transform: skewY(-7deg);
   }
 }
 
@@ -197,38 +175,33 @@ body {
 }
 
 .hero__scroll-button {
-  display: inline-block;
-  background-color: var(--white);
-  padding: 8px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   margin: auto;
-  transform: translateY(50%);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  width: 50px;
+  height: 50px;
+  font-family: inherit;
   border: none;
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--pink);
+  outline: none;
   appearance: none;
   cursor: pointer;
-  outline: none;
-  color: var(--pink);
-  font-family: inherit;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(50%);
 }
 
 .hero__scroll-label {
   position: absolute;
   bottom: 40px;
   left: 50%;
-  transform: translateX(-50%);
   color: rgba(255, 255, 255, 0.85);
+  transform: translateX(-50%);
 }
-
-////////////////////////////////////////
-////////////////////////////////////////
-////////////////////////////////////////
 
 .section__title {
   margin: 0;
@@ -251,14 +224,14 @@ body {
 }
 
 .mx-auto {
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 .section {
+  margin: auto;
   padding: 32px;
   max-width: 1200px;
-  margin: auto;
 }
 
 .section--reverse {
@@ -280,10 +253,10 @@ body {
 }
 
 .step {
-  max-width: 168px;
   margin: 8px;
-  color: inherit;
+  max-width: 168px;
   text-decoration: none;
+  color: inherit;
 }
 
 .step__number {
@@ -296,15 +269,14 @@ body {
   font-size: 24px;
   line-height: 29px;
   border-radius: 50%;
-
   background-color: var(--pink);
   color: var(--white);
 }
 
 .step__title {
+  margin-bottom: 12px;
   font-size: 24px;
   line-height: 29px;
-  margin-bottom: 12px;
 }
 
 .step__description {
@@ -312,13 +284,13 @@ body {
 }
 
 .section__tagline {
-  font-weight: 600;
   max-width: 340px;
+  font-weight: 600;
 }
 
 .templates-preview {
-  width: 100%;
   margin-top: 16px;
+  width: 100%;
   max-width: 420px;
 }
 
@@ -333,9 +305,9 @@ body {
 }
 
 .customize-preview {
+  margin-top: 16px;
   width: 100%;
   max-width: 700px;
-  margin-top: 16px;
 }
 
 .download-preview {
@@ -352,8 +324,8 @@ body {
 }
 
 .social-media {
-  line-height: 1.25;
   margin-top: 80px;
+  line-height: 1.25;
 }
 
 .social-media__icons {
@@ -367,18 +339,18 @@ body {
 }
 
 .footer__title {
-  font-size: 48px;
-  font-weight: bold;
-  line-height: 58px;
   margin-top: 0;
   margin-bottom: 12px;
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: bold;
 }
 
 .footer__tagline {
   margin-bottom: 24px;
   font-size: 32px;
-  font-weight: bold;
   line-height: 40px;
+  font-weight: bold;
 }
 
 .bottom-gradient {
@@ -389,11 +361,11 @@ body {
   &::after {
     content: '';
     position: absolute;
-    top: var(--skew-padding-bottom);
-    height: 150%;
+    top: var(--bottom-skew-height);
     right: 0;
     bottom: 0;
     left: 0;
+    height: 150%;
     background: linear-gradient(50deg, var(--pink) 0%, var(--yellow) 100%);
     transform: skewY(4deg);
   }
