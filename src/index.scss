@@ -336,6 +336,11 @@ a {
 
 .social-media__icons {
   display: flex;
+  margin: auto;
+
+  @media (min-width: 768px) {
+    margin: 0;
+  }
 }
 
 .social-media__icon {
